@@ -1,64 +1,136 @@
-*{
-    padding:0px;
-    margin:0px;
-
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
 }
-body{
-    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,.5),rgba(0,0,0,5)),url(bar-beverage-blur-caffeine.jpg);
+
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('bar-beverage-blur-caffeine.jpg');
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     padding: 15px;
+    font-family: Arial, sans-serif;
 }
+
+/* Header styles */
 header {
     color: white;
     padding: 10px;
     display: flex;
     justify-content: space-between;
-
-    
+    align-items: center;
 }
-.logo img{
-    width:70px;
+
+.logo img {
+    width: 70px;
     height: 70px;
+}
 
-    
-}
-nav a{
+nav a {
     text-decoration: none;
-    color:white;
-    margin-right: 150px;
+    color: white;
+    margin-right: 20px;
     font-size: 20px;
-    font-family:cursive;
+    font-family: cursive;
 }
-a:hover{
-    color:rgb(154, 240, 17);
-    border:solid 2px #fff; 
+
+a:hover {
+    color: rgb(154, 240, 17);
+    border: solid 2px #fff;
     border-radius: 10px;
     font-style: italic;
-    
 }
-.content{
-    position: absolute;
-    color:whitesmoke;
+
+/* Navigation button */
+nav button {
+    color: white;
+    background-color: red;
+    border-radius: 15px;
+    padding: 5px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+nav input {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+/* Content Section */
+.content {
+    color: whitesmoke;
     position: absolute;
     top: 30%;
     right: 5%;
+    max-width: 600px;
+    text-align: right;
 }
- h1{
-    font-size: 100px;
 
- }
- .content .details{
-    font-family: bold;
-    font-size: 900;
-    
+h1 {
+    font-size: 70px;
+}
 
- }
- nav button{
-    color:white;
-    background-color: red;
-    border-radius: 15px;
-    
- }
+.content .details {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav a {
+        margin: 10px 0;
+        font-size: 18px;
+    }
+
+    nav input,
+    nav button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .content {
+        top: 40%;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .content .details {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .content .details {
+        font-size: 14px;
+    }
+}
